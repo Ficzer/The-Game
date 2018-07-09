@@ -54,8 +54,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Graphic\RenderPlayer.cs" />
+    <Compile Include="Logic\Creature.cs" />
+    <Compile Include="Logic\CreatureRepo.cs" />
+    <Compile Include="Logic\CreatureStatistics.cs" />
+    <Compile Include="Logic\Direction.cs" />
+    <Compile Include="Logic\Mage.cs" />
+    <Compile Include="Logic\Monster.cs" />
+    <Compile Include="Logic\Player.cs" />
+    <Compile Include="Logic\Rogue.cs" />
+    <Compile Include="Logic\Warrior.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Logic\Vector2f.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -86,5 +97,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
