@@ -54,7 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Graphic\RenderMonster.cs" />
     <Compile Include="Graphic\RenderPlayer.cs" />
+    <Compile Include="Logic\Control.cs" />
     <Compile Include="Logic\Creature.cs" />
     <Compile Include="Logic\CreatureRepo.cs" />
     <Compile Include="Logic\CreatureStatistics.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="Logic\Monster.cs" />
     <Compile Include="Logic\Player.cs" />
     <Compile Include="Logic\Rogue.cs" />
+    <Compile Include="Logic\Skeleton.cs" />
     <Compile Include="Logic\Warrior.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

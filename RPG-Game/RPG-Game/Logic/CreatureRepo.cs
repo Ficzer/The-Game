@@ -15,5 +15,10 @@ namespace RPG_Game.Logic
 
         public Player Player { get => player; set => player = value; }
         public ArrayList Monsters { get => monsters; set => monsters = value; }
+
+        public CreatureRepo()
+        {
+            monsters = new ArrayList();
+        }
     }
 }

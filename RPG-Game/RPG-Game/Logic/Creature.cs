@@ -9,7 +9,7 @@ namespace RPG_Game
 {
     abstract class Creature
     {
-        protected const float MOVINGCONST = 0.001f;
+        protected const float MOVINGCONST = 4.0f;
         protected String name;
         protected Vector2f position;
         protected Vector2f velocity;
@@ -39,13 +39,13 @@ namespace RPG_Game
             switch(direction)
             {
                 case Direction.Up:
-                    Position.Y += MOVINGCONST;
+                    Position.Y -= MOVINGCONST;
                     break;
                 case Direction.Right:
                     Position.X += MOVINGCONST;
                     break;
                 case Direction.Down:
-                    Position.Y -= MOVINGCONST;
+                    Position.Y += MOVINGCONST;
                     break;
                 case Direction.Left:
                     Position.X -= MOVINGCONST;

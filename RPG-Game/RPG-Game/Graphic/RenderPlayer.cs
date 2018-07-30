@@ -13,11 +13,13 @@ namespace RPG_Game.Graphic
 {
     static class RenderPlayer
     {
+        const int PLAYERSIZE = 20;
+
         public static CircleShape GetShape(Player player)
         {
-            var shape = new CircleShape(50);
+            var shape = new CircleShape(PLAYERSIZE);
             shape.Position = new SFML.System.Vector2f(player.Position.X, player.Position.Y);
-
+            shape.Origin = new SFML.System.Vector2f(PLAYERSIZE / 2, PLAYERSIZE / 2);
 
             if(player is Warrior)
                 shape.FillColor = Color.Red;

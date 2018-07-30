@@ -18,18 +18,42 @@ namespace RPG_Game
         {
             RenderWindow window = new RenderWindow(new VideoMode(1000, 800), "Test", Styles.Default);
 
-            window.Closed += (sender, arg) => window.Close();
-
             CreatureRepo repo = new CreatureRepo();
-            repo.Player = new Warrior("Dupa", new Vector2f(200,200));
+            repo.Player = new Warrior("Dupa", new Vector2f(200, 200));
+            repo.Monsters.Add(new Skeleton("Skeleton1", new Vector2f(400, 400), 20));
+            repo.Monsters.Add(new Skeleton("Skeleton2", new Vector2f(600, 400), 20));
 
-            while(window.IsOpen)
+            window.Closed += (sender, arg) => window.Close();
+            window.KeyPressed += (sender, arg) =>
+                {
+                    if (Keyboard.IsKeyPressed(Keyboard.Key.D))
+                    {
+                      
+                        repo.Player.Move(Direction.Right);
+                    }
+                    if (Keyboard.IsKeyPressed(Keyboard.Key.A))
+                        repo.Player.Move(Direction.Left);
+                    if (Keyboard.IsKeyPressed(Keyboard.Key.S))
+                        repo.Player.Move(Direction.Down);
+                    if (Keyboard.IsKeyPressed(Keyboard.Key.W))
+                        repo.Player.Move(Direction.Up);
+                };
+
+           
+
+
+            while (window.IsOpen)
             {
                 window.DispatchEvents();
+                window.Clear();
 
                 window.Draw(RenderPlayer.GetShape(repo.Player));
+
+                foreach(Monster mon in repo.Monsters)
+                {
+                    window.Draw(RenderMonster.GetShape(mon));
+                }
                 
-                window.Clear();
                 window.Display();
             }
             
